@@ -106,7 +106,11 @@ export default function HomeScreen() {
           <Text style={styles.sectionTitle}>Featured Products</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {featuredProducts.map((product, index) => (
-              <TouchableOpacity key={index} style={styles.productCard}>
+              <TouchableOpacity 
+                key={index} 
+                style={styles.productCard}
+                onPress={() => router.push(`/product/${product.id}`)}
+              >
                 <View style={styles.productImageContainer}>
                   <Image
                     source={{ uri: 'https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg' }}

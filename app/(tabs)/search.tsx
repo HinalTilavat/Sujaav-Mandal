@@ -151,7 +151,6 @@ export default function SearchScreen() {
               <RecommendationCard
                 key={index}
                 recommendation={rec}
-                onPress={() => {/* Navigate to product detail */}}
               />
             ))}
           </View>
@@ -183,7 +182,6 @@ export default function SearchScreen() {
               <ProductCard
                 key={index}
                 product={product}
-                onPress={() => {/* Navigate to product detail */}}
               />
             ))}
           </View>

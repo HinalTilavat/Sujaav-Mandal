@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { Star, ThumbsUp, CircleAlert as AlertCircle } from 'lucide-react-native';
 import { Recommendation } from '../app/services/geminiService';
+import { router } from 'expo-router';
 
 interface RecommendationCardProps {
   recommendation: Recommendation;
@@ -42,7 +43,10 @@ export function RecommendationCard({ recommendation, onPress }: RecommendationCa
   };
 
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity 
+      style={styles.container} 
+      onPress={() => router.push(`/product/${product.id}`)}
+    >
       {/* Match Score Badge */}
       <View style={[styles.matchBadge, { backgroundColor: getMatchColor(matchScore) }]}>
         <Star size={12} color="#ffffff" fill="#ffffff" />

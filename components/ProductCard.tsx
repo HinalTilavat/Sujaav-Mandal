@@ -10,6 +10,7 @@ import {
 import { Heart } from 'lucide-react-native';
 import { Product } from '../app/data/products';
 import { favoritesService } from '../app/services/favoritesService';
+import { router } from 'expo-router';
 
 const { width } = Dimensions.get('window');
 
@@ -70,7 +71,10 @@ export function ProductCard({
   };
 
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity 
+      style={styles.container} 
+      onPress={() => router.push(`/product/${product.id}`)}
+    >
       <View style={styles.imageContainer}>
         <Image
           source={{ uri: getProductImage(product.category) }}

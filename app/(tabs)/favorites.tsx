@@ -71,7 +71,6 @@ export default function FavoritesScreen() {
               <ProductCard
                 key={index}
                 product={product}
-                onPress={() => {/* Navigate to product detail */}}
                 onFavoritePress={() => removeFavorite(product.id)}
                 isFavorite={true}
               />
